@@ -313,6 +313,12 @@ Web-Based Quantitative Analysis of Amorphous Phase Using XRD Data
 <hr>
 """, unsafe_allow_html=True)
 
+st.markdown("""
+---
+© 2026 Imelia Putri Salsabila  
+Web-based XRD Amorphous Analysis System
+""")
+
 
 xrd_file = st.file_uploader("📂 Upload File XRDML", type=['xrdml'])
 bg_file = st.file_uploader("📐 Upload Background Rietveld (CIF/TXT) - Opsional", type=['cif', 'txt'])
