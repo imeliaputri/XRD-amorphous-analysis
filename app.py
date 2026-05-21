@@ -303,7 +303,7 @@ background: rgba(0,0,0,0);
 }
 
 [data-testid="stSidebar"]{
-background: rgba(20,20,20,0.85);
+background: rgba(15,15,15,0.85);
 }
 </style>
 """
