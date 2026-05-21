@@ -313,12 +313,6 @@ Web-Based Quantitative Analysis of Amorphous Phase Using XRD Data
 <hr>
 """, unsafe_allow_html=True)
 
-st.markdown("""
----
-© 2026 Imelia Putri Salsabila  
-Web-based XRD Amorphous Analysis System
-""")
-
 
 xrd_file = st.file_uploader("📂 Upload File XRDML", type=['xrdml'])
 bg_file = st.file_uploader("📐 Upload Background Rietveld (CIF/TXT) - Opsional", type=['cif', 'txt'])
@@ -422,3 +416,10 @@ else:
     3. Atur rentang `2θ` dan parameter iterasi di sidebar
     4. Hasil perhitungan amorf + plot validasi akan muncul otomatis
     """)
+
+st.markdown("""
+---
+© 2026 Imelia Putri Salsabila  
+Web-based XRD Amorphous Analysis System
+""")
+
