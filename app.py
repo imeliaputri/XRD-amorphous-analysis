@@ -288,6 +288,27 @@ class PureBackgroundExtractor:
 # 3. STREAMLIT UI
 # =========================================================
 st.set_page_config(layout="wide", page_title="Amorphous Content Validator (Advanced)")
+page_bg = """
+<style>
+[data-testid="stAppViewContainer"]{
+background-image: url("https://images.unsplash.com/photo-1532187643603-ba119ca4109e");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+
+[data-testid="stHeader"]{
+background: rgba(0,0,0,0);
+}
+
+[data-testid="stSidebar"]{
+background: rgba(20,20,20,0.85);
+}
+</style>
+"""
+
+st.markdown(page_bg, unsafe_allow_html=True)
 # =========================================================
 # PAGE CONFIG
 # =========================================================
