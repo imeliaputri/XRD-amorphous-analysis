@@ -291,7 +291,7 @@ st.set_page_config(layout="wide", page_title="Amorphous Content Validator (Advan
 page_bg = """
 <style>
 [data-testid="stAppViewContainer"]{
-background-image: url("https://raw.githubusercontent.com/imeliaputri/XRD-amorphous-analysis/main/Difference Between X Ray Diffraction and Electron….jpg");
+background-image: url("https://raw.githubusercontent.com/imeliaputri/XRD-amorphous-analysis/main/ChatGPT Image 21 Mei 2026, 11.41.43.png");
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
