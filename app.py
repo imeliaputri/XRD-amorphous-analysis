@@ -288,7 +288,31 @@ class PureBackgroundExtractor:
 # 3. STREAMLIT UI
 # =========================================================
 st.set_page_config(layout="wide", page_title="Amorphous Content Validator (Advanced)")
-st.title("🔬 Validasi Kandungan Amorf (SNIP Iteratif + Rietveld)")
+# =========================================================
+# PAGE CONFIG
+# =========================================================
+st.set_page_config(
+    page_title="XRD Amorphous Analysis",
+    page_icon="🔬",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+# =========================================================
+# HEADER
+# =========================================================
+st.markdown("""
+<h1 style='text-align:center; color:#00B4D8;'>
+🔬 XRD Amorphous Analysis Platform
+</h1>
+
+<p style='text-align:center; font-size:18px;'>
+Web-Based Quantitative Analysis of Amorphous Phase Using XRD Data
+</p>
+
+<hr>
+""", unsafe_allow_html=True)
+
 
 xrd_file = st.file_uploader("📂 Upload File XRDML", type=['xrdml'])
 bg_file = st.file_uploader("📐 Upload Background Rietveld (CIF/TXT) - Opsional", type=['cif', 'txt'])
