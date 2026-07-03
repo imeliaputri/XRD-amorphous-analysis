@@ -340,7 +340,7 @@ Web-Based Quantitative Analysis of Amorphous Phase Using XRD Data
 
 
 xrd_file = st.file_uploader("📂 Upload File XRDML", type=['xrdml'])
-bg_file = st.file_uploader("📐 Upload Background Rietveld (CIF/TXT) - Opsional", type=['cif', 'txt'])
+bg_file = st.file_uploader("📐 Upload Background Rietveld (CIF/TXT) - Wajib", type=['cif', 'txt'])
 
 if xrd_file:
     extractor = PureBackgroundExtractor()
@@ -395,9 +395,12 @@ if xrd_file:
     if extractor.corrected_data is not None:
         axes[0,0].plot(extractor.x, extractor.corrected_data, 'b-', lw=1.2, alpha=0.8, label='Rietveld Corrected')
     axes[0,0].plot(extractor.x, extractor.background, 'r-', lw=2, label='Amorphous BG')
-    axes[0,0].set_xlabel('2θ (°)'); axes[0,0].set_ylabel('Intensity')
-    axes[0,0].set_title('Background Extraction Results'); axes[0,0].legend(); axes[0,0].grid(True, alpha=0.3)
-
+    axes[0,0].set_xlabel('2θ (°)')
+    axes[0,0].set_ylabel('Intensity')
+    axes[0,0].set_title('Background Extraction Results')
+    axes[0,0].legend()
+    axes[0,0].grid(True, alpha=0.3)
+    axes[0,0].set_ylim(0, 1000)
     if apply_rietveld and bg_file and hasattr(rietveld, 'interpolated_bg') and rietveld.interpolated_bg is not None:
         axes[0,1].plot(rietveld.rietveld_bg_x, rietveld.rietveld_bg_y, 'ro-', markersize=3, label='Original Rietveld')
         axes[0,1].plot(extractor.x, rietveld.interpolated_bg, 'b-', lw=2, label='Interpolated')
@@ -412,7 +415,7 @@ if xrd_file:
     axes[1,0].axhline(0, color='r', ls='--', alpha=0.5)
     axes[1,0].set_xlabel('2θ (°)'); axes[1,0].set_ylabel('Residual')
     axes[1,0].set_title('Residual Analysis'); axes[1,0].grid(True, alpha=0.3)
-
+    axes[1,0].set_ylim(-1000, 1000)
     summary = (f"COMPREHENSIVE AMORPHOUS ANALYSIS\n{'='*35}\n\n"
                f"Amorphous Content: {amorphous:.1f} ± {uncertainty:.1f}%\n\n"
                f"Data Status:\n"
@@ -437,7 +440,7 @@ else:
     st.markdown("""
     ### 💡 Cara Pakai:
     1. Upload file `.xrdml` dari alat XRD Anda
-    2. (Opsional) Upload file background Rietveld `.cif` atau `.txt`
+    2. (Wajib) Upload file background Rietveld `.cif` atau `.txt`
     3. Atur rentang `2θ` dan parameter iterasi di sidebar
     4. Hasil perhitungan amorf + plot validasi akan muncul otomatis
     """)
